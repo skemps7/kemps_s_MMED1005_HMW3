@@ -5,18 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
-  <title>Starship Troopers Game</title>
+  <title>Starship Troopers Memory Game</title>
 </head>
 <body>
   <main>
-    <h1 class="hidden">Welcome</h1>
-    <section>
-      <p>Game Stuff</p>
-      <p>THIS GAME IS AWESOME</p>
+    <h1 class="hidden">The Starship Troopers Memory Game</h1>
+
+<!--BEGINNING PLAY SCREEN-->
+    <section class="startScreen showPiece">
+      <h2 class="hidden">Click to Play!</h2>
+      
+      <img src="#" alt="Starship Troopers Logo"><!--Lg Starship Troopers logo for start screen-->
+
+      <div id="beginPlay">
+        <p>Young people all over the globe are joining up to save the future!</p>
+        <button id="start">PLAY</button>
+      </div>
+
     </section>
-    <footer>
-      <p>footer info</p>
-    </footer>
+
+<!--TOP BAR WITH LIVES, ETC...-->
+    <section id="topBar">
+      <h2 class="hidden">Score, Time, and Lives</h2>
+
+      <div id=gameBar>
+
+        <div id="lives">
+          <ul>
+            <li id="label">LIVES:</li>
+            <li class="lifeIcon"><!--SVG Life Icon will be placed here--></li>
+            <li class="lifeIcon"><!--SVG Life Icon will be placed here--></li>
+            <li class="lifeIcon"><!--SVG Life Icon will be placed here--></li>
+          </ul>
+        </div>
+        <div id="time">
+          <p>TIME:</p>
+          <!--Timer will go here-->
+        </div>
+        <div id="score">
+          <p>SCORE:</p>
+          <p id="scoreCount"></p> <!--empty p tag to insert score in js-->
+        </div>
+
+      </div>
+    </section>
+
+<!--GAME INFO AND WIN/LOSE MESSAGE SECTION-->
+    <section id="gameInfo">
+      <h2 class="hidden">Info About The Game</h2>
+
+      <div id="infoSection">
+        <p id="gameStatus"><!--Insert info/win/lose with js--></p>
+        <p id="gameStatusMessage"><!--Insert corresponding message with js--></p>
+
+        <button id="playAgain">PLAY AGAIN?</button>
+      </div>
+
+    </section>
+
+<!--GAMEPLAY AREA-->
+    <section id="gameplayArea">
+      <h2 class="hidden">Game Play Area</h2>
+
+      <ul><!--Not sure exactly how to lay this out yet... may change.-->
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+        <li><!--SVG of each card here- size and format in CSS--></li>
+      </ul>
+
+    </section>
+
+
   </main>
   <script src="js/main.js"></script>
 </body>
