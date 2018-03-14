@@ -12,15 +12,16 @@
     <h1 class="hidden">The Starship Troopers Memory Game</h1>
 
 <!--BEGINNING PLAY SCREEN-->
-    <section class="startScreen showPiece">
+    <section class="startScreen">
       <h2 class="hidden">Click to Play!</h2>
       
-      <img src="#" alt="Starship Troopers Logo"><!--Lg Starship Troopers logo for start screen-->
+      <div>
+      <img src="images/title_lg.png" alt="Starship Troopers Logo"><!--Lg Starship Troopers logo for start screen-->
+    </div>
 
-      <div id="beginPlay">
         <p>Young people all over the globe are joining up to save the future!</p>
         <button id="start">PLAY</button>
-      </div>
+ 
 
     </section>
 
@@ -28,7 +29,11 @@
     <section id="topBar">
       <h2 class="hidden">Score, Time, and Lives</h2>
 
-      <div id=gameBar>
+      <div id="logo">
+        <img src="images/title_copy.png" alt="logo">
+      </div>
+
+      <div id="gameBar">
 
         <div id="lives">
           <ul>
@@ -55,8 +60,8 @@
       <h2 class="hidden">Info About The Game</h2>
 
       <div id="infoSection">
-        <p id="gameStatus"><!--Insert info/win/lose with js--></p>
-        <p id="gameStatusMessage"><!--Insert corresponding message with js--></p>
+        <p id="gameStatus">Match the cards to earn points.</p>
+        <p id="gameStatusMessage">Remember your training, and you will make it out alive! -Lieutenant Willy</p>
 
         <button id="playAgain">PLAY AGAIN?</button>
       </div>
@@ -66,6 +71,20 @@
 <!--GAMEPLAY AREA-->
     <section id="gameplayArea">
       <h2 class="hidden">Game Play Area</h2>
+
+      <section class="container">
+        <div class="card">
+         <img src="images/cardBack.png" class="front">
+         <img src="images/cardFront.png" class="back">
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="card">
+          <img src="images/cardBack.png" class="front">
+          <img src="images/cardFront2.png" class="back">
+        </div>
+      </section>
 
       <ul><!--Not sure exactly how to lay this out yet... may change.-->
         <li><!--SVG of each card here- size and format in CSS--></li>
