@@ -106,7 +106,7 @@ body{
 
 /*CARD FLIPS*/
 
-.container { 
+.container {
   width:120px;
   height: 165px;
   position: relative;
@@ -138,27 +138,3 @@ body{
 .card.flipped {
   transform: rotateY( 180deg );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
