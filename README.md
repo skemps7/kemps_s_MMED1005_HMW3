@@ -2,4 +2,4 @@
 
 Built with HTML5, CSS, JavaScript
 
-Contributors: Samantha Kemps and Mariah Alderson
+Contributors: Samantha Kemps, Mariah Alderson and David Thibodeau 
