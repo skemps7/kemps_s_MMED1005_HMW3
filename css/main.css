@@ -138,3 +138,15 @@ body{
 .card.flipped {
   transform: rotateY( 180deg );
 }
+
+
+/*GAMEPLAY AREA*/
+#gameplayArea ul{
+	display: inline;
+	list-style: none;
+	overflow-wrap: break-word;
+}
+
+#gameplayArea ul li{
+	float: left;
+}

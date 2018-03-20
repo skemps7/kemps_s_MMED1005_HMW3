@@ -28,10 +28,31 @@ function removeFlip(){
 	this.classList.remove('flipped');
 }
 
+//shuffle cards
+function shuffle (array) {
+  var i = 0
+    , j = 0
+    , temp = null
+    , cards = array
 
-playButton.addEventListener('click', beginGame);
+  for (i = array.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+}
+
+
+//begin Game
+function openGame(){
+  beginGame();
+  shuffle(cards);
+}
+
+playButton.addEventListener('click', openGame);
 //cards.addEventListener('click', flipCard);
 cards.forEach(card=>card.addEventListener('click', flipCard));
-
+console.log(cards);
 
 })();
