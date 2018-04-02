@@ -15,20 +15,42 @@
       list = document.createElement("ul");
 
 console.log(imagePaths[0]);
+var random = Math.floor(Math.random()*5+1);
+
+function compare(a,b){
+  a = random;
+  b = random;
+
+  if (a < b) {
+    return -1;
+  }
+  if (a > b){
+    return 1;
+  }
+  if (a = b){
+    return 0;
+  }
+}
 
  //run for loop to fill with <li> items
   for(var i=0; i<imagePaths.length; i++) {
     console.log(i);
+    let random=Math.floor(Math.random()*i+1);
+
   //here we use innerHTML to write in images, using the values in the array
     list.innerHTML += `<li><section class="container"><div class="card">
              <img src="images/cardBack.png" class="front">
-             <img src="${imagePaths[i]}" alt="card" class="back">
+             <img src="${imagePaths[random]}" alt="card" class="back">
              </div></section></li>`
   
   //now that ul is filled with li and images append it to content div
-  content.appendChild(list);}
+  content.appendChild(list);
+}
 
-let       cards = Array.from(document.querySelectorAll('.card'));
+let cards = Array.from(document.querySelectorAll('.card'));
+
+
+
 
 
 //function to reveal game play after clicking "play" on start screen
