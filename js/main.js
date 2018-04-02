@@ -15,22 +15,6 @@
       list = document.createElement("ul");
 
 console.log(imagePaths[0]);
-var random = Math.floor(Math.random()*5+1);
-
-function compare(a,b){
-  a = random;
-  b = random;
-
-  if (a < b) {
-    return -1;
-  }
-  if (a > b){
-    return 1;
-  }
-  if (a = b){
-    return 0;
-  }
-}
 
  //run for loop to fill with <li> items
   for(var i=0; i<imagePaths.length; i++) {
