@@ -1,10 +1,15 @@
-(() => {
+
   console.log("Starship Troopers!!!");
 
   let playScreen = document.querySelector('.startScreen'),
   	  playButton = document.querySelector('#start'),
       content = document.querySelector('#gameplayArea'),
       imagePaths = ["images/cardFront.png",
+                    "images/cardFront2.png",
+                    "images/cardFront3.png",
+                    "images/cardFront4.png",
+                    "images/cardFront5.png",
+                    "images/cardFront.png",
                     "images/cardFront2.png",
                     "images/cardFront3.png",
                     "images/cardFront4.png",
@@ -28,8 +33,6 @@ while(--i >= 0){
     imagePaths[j] = imagePaths[i];
     imagePaths[i] = temp;
 
-console.log(imagePaths);
-   
     list.innerHTML += `<li><section class="container"><div class="card">
              <img src="images/cardBack.png" class="front">
              <img src="${imagePaths[i]}" alt="card" class="back">
@@ -38,30 +41,49 @@ console.log(imagePaths);
   content.appendChild(list);
 
 
-
 let cards = Array.from(document.querySelectorAll('.card'));
+
 
 //timer
 var sec = 0; function pad ( val ) { return val > 9 ? val : "0" + val; } setInterval( function(){
    document.getElementById("seconds").innerHTML=pad(++sec%60);
    document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10)); }, 1000);
 
+
+//flip card back over
+function removeFlip(){
+  this.classList.remove('flipped');
+}
+
 //flip card
 function flipCard(){
 	this.classList.add('flipped');
 }
 
-//flip card back over
-function removeFlip(){
+  let flip = Array.from(document.querySelectorAll('img .flipped'));
+  flip.push('.flipped');
+  var len = flip.length;
 
-	this.classList.remove('flipped');
+  function match(){
+      if(flip[0].src != flip[1].src){
+      removeFlip(flip[0]);
+      removeFlip(flip[1]);
+      enable();
+      flip = [];
+    }
+  }
+
+function check(len){
+  if(len===2){
+    match();
+  }
 }
 
-
+check(len);
 
 playButton.addEventListener('click', beginGame);
 //cards.addEventListener('click', flipCard);
 cards.forEach(card=>card.addEventListener('click', flipCard));
-console.log(cards);
 
-})();
+
+

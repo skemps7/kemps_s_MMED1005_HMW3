@@ -1,5 +1,5 @@
 body{
-	width: 1388px;
+	max-height: 100%;
 	margin: 0;
 	padding: 0;
 	background: url(../images/game_bckgd_logo.png) no-repeat;
@@ -15,8 +15,7 @@ body{
 }
 
 .startScreen{
-	width: 1388px;
-	height: 785px;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	background: url(../images/play_background.png) no-repeat;
@@ -38,7 +37,7 @@ body{
 
 #start{
 	margin-left: 400px;
-	margin-top: 50px;
+	margin-top: 0;
 	padding: 5px 15px 5px 15px;
 	font-family: 'Andale Mono', arial, sans-serif;
 	font-size: 30px;
@@ -103,6 +102,23 @@ body{
 	margin-top: 20px;
 }
 
+#playAgain{
+	background: none;
+	border: none;
+	padding: 5px;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin-left: 400px;
+}
+
+#playAgain:hover{
+	background: rgba(255,255,255,0.5);
+	color: #333;
+	border-radius: 10px;
+}
+
 
 /*CARD FLIPS*/
 
@@ -141,12 +157,19 @@ body{
 
 
 /*GAMEPLAY AREA*/
+
+#gameplayArea{
+	width: 90%;
+	margin-left: 10%;
+}
+
 #gameplayArea ul{
-	display: inline;
 	list-style: none;
-	overflow-wrap: break-word;
+	width: 700px;
 }
 
 #gameplayArea ul li{
-	float: left;
+	display: inline-block;
+	margin-right: 20px;
 }
+
