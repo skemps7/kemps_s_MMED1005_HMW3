@@ -13,7 +13,6 @@
       list = document.createElement("ul");
 
 
-
 //function to reveal game play after clicking "play" on start screen
 function beginGame(){
 	playScreen.classList.add('showPiece');
@@ -25,12 +24,12 @@ var i = imagePaths.length, j, temp;
 
 while(--i >= 0){
     j = Math.floor(Math.random() * (i+1)); // Get random number ranging between 0 and i
-    temp = imagePaths[j];
+    temp = imagePaths[j]; 
     imagePaths[j] = imagePaths[i];
     imagePaths[i] = temp;
 
 console.log(imagePaths);
-
+   
     list.innerHTML += `<li><section class="container"><div class="card">
              <img src="images/cardBack.png" class="front">
              <img src="${imagePaths[i]}" alt="card" class="back">
@@ -59,13 +58,6 @@ function removeFlip(){
 }
 
 
-
-
-// //begin Game
-// function openGame(){
-//   beginGame();
-//   shuffle(imagePaths);
-// }
 
 playButton.addEventListener('click', beginGame);
 //cards.addEventListener('click', flipCard);
