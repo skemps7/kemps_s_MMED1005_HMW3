@@ -18,7 +18,6 @@
       list = document.createElement("ul");
 
 
-
 //function to reveal game play after clicking "play" on start screen
 function beginGame(){
 	playScreen.classList.add('showPiece');
@@ -30,7 +29,7 @@ var i = imagePaths.length, j, temp;
 
 while(--i >= 0){
     j = Math.floor(Math.random() * (i+1)); // Get random number ranging between 0 and i
-    temp = imagePaths[j];
+    temp = imagePaths[j]; 
     imagePaths[j] = imagePaths[i];
     imagePaths[i] = temp;
 
@@ -81,18 +80,6 @@ function check(len){
 }
 
 check(len);
-
-
-
-// function matches(flip){
-//   if(flip[0].src != flip[1].src){
-//    removeFlip();
-//    flip = [];
-// }
-// }
-
-// matches(flip[0],flip[1]);
-
 
 playButton.addEventListener('click', beginGame);
 //cards.addEventListener('click', flipCard);
