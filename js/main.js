@@ -16,7 +16,9 @@
                     "images/cardFront5.png"
                     ],
       list = document.createElement("ul"),
-      flip =[];
+      flip =[],
+      matches = [],
+      score = 0;
 
 
 //function to reveal game play after clicking "play" on start screen
@@ -66,17 +68,38 @@ function flipCard() {
   function match() {
 
     if (flip[0].querySelector('.back').src != flip[1].querySelector('.back').src) {
+      score -=5;//lose 5 pts for wrong guess
       removeFlip.call(flip[0]); // or you can do it like this: removeFlip(flip[0]);
       removeFlip.call(flip[1]); // same as above -> but you'd have add card to the removeFlip function inside the round brackets
 
       flip = [];
+      console.log(score);
+    } if (flip[0].querySelector('.back').src == flip[1].querySelector('.back').src) {//empty array if match
+      score +=20;//gain 20 pts for match
+      matches.push(flip[0], flip[1]);
+      flip = [];
+      console.log(score);
+    } if (matches.length == 10){
+      alert("You win!! Play again?");//popup asks to play again
+      alert.addEventListener('click', gameOver());//game resets
     }
   }
 
 function checkCards(len) {
   if(len===2){
-    match();
+    setTimeout(() => match(), 1500);
+
   }
+}
+
+function gameOver(){
+  if(matches.length==10);
+  cards.forEach(card => card.classList.remove('flipped'));
+  matches = [];
+  flip = [];
+  sec = 0;
+  score = 0;
+
 }
 
 playButton.addEventListener('click', beginGame);
