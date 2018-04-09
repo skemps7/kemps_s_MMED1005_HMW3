@@ -119,6 +119,31 @@ body{
 	border-radius: 10px;
 }
 
+.typeEffect h1 {
+  overflow: hidden;
+  color: white;
+	text-align: center;
+  border-right: .15em solid white; 
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 4.5s steps(40, end),
+    blink-cursor .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The type cursor effect */
+@keyframes blink-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
 
 /*CARD FLIPS*/
 
