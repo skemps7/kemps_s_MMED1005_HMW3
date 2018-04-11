@@ -119,6 +119,10 @@ body{
 	border-radius: 10px;
 }
 
+.typeEffect{
+	margin-right: 250px;
+}
+
 .typeEffect h1 {
   overflow: hidden;
   color: white;

@@ -18,7 +18,9 @@
       list = document.createElement("ul"),
       flip =[],
       matches = [],
-      score = 0;
+      score = 0,
+      gameOverMessage = document.querySelector('.typeEffect h1'),
+      playAgain = document.querySelector('#playAgain');
 
 
 //function to reveal game play after clicking "play" on start screen
@@ -79,9 +81,10 @@ function flipCard() {
       matches.push(flip[0], flip[1]);
       flip = [];
       console.log(score);
-    } if (matches.length == 10){
-      alert("You win!! Play again?");//popup asks to play again
-      alert.addEventListener('click', gameOver());//game resets
+      } if (matches.length == 10){
+        gameOver();
+    //     alert("You win!! Play again?");//popup asks to play again
+    //   alert.addEventListener('click', gameOver());//game resets
     }
   }
 
@@ -94,14 +97,21 @@ function checkCards(len) {
 
 function gameOver(){
   if(matches.length==10);
+  gameOverMessage.classList.remove('showPiece');
+  playAgain.classList.remove('showPiece');
+}
+
+
+function resetGame(){
   cards.forEach(card => card.classList.remove('flipped'));
+  gameOverMessage.classList.add('showPiece');
+  playAgain.classList.add('showPiece');
   matches = [];
   flip = [];
   sec = 0;
   score = 0;
-
 }
 
 playButton.addEventListener('click', beginGame);
-
+playAgain.addEventListener('click', resetGame);
 cards.forEach(card => card.addEventListener('click', flipCard));
