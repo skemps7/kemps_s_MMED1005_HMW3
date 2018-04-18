@@ -76,6 +76,14 @@ body{
 	float: left;
 }
 
+#lives img{
+	display: block;
+}
+
+#lives p{
+	display: block;
+}
+
 #gameBar ul{
 	list-style: none;
 }
