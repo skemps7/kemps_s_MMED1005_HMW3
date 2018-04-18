@@ -17,9 +17,9 @@
                     ],
       list = document.createElement("ul"),
       flip =[],
-      matches = [],
-      score = 0
-      lives = 10,
+      matches = 0,
+      score = 0,
+      lives = 2,
       gameOverMessage = document.querySelector('.typeEffect h1'),
       playAgain = document.querySelector('#playAgain'),
       lifeList = document.querySelector('.livesCon');
@@ -81,9 +81,9 @@ function flipCard() {
       score -=5;//lose 5 pts for wrong guess
       lives--
       lifeList.innerHTML = "x"+lives;
-      if(lives ==0){
-        gameOver();
-      }
+      // if(lives ==0){
+         gameOver();
+      // }
       removeFlip.call(flip[0]); // or you can do it like this: removeFlip(flip[0]);
       removeFlip.call(flip[1]); // same as above -> but you'd have add card to the removeFlip function inside the round brackets
 
@@ -92,29 +92,37 @@ function flipCard() {
 
     } if (flip[0].querySelector('.back').src == flip[1].querySelector('.back').src) {//empty array if match
       score +=20;//gain 20 pts for match
-      matches.push(flip[0], flip[1]);
+      matches++;
       flip = [];
-      console.log(score);
+      console.log(matches);
+ 
     
-      } if (matches.length == 10){
-        overMessage.innerHTML = "You Win! Congratulatios!";
+       // } if (matches == 4){
+       //  gameOverMessage.innerHTML = "You Win! Congratulatios!";
         gameOver();
-    }
-    
+      }
+
 
   }
 
 function checkCards(len) {
+  gameOver();
   if(len===2){
     setTimeout(() => match(), 1500);
-
   }
+  
 }
 
 
 function gameOver(){
-  gameOverMessage.classList.remove('showPiece');
-  playAgain.classList.remove('showPiece');
+  if(lives ==0){
+    gameOverMessage.classList.remove('showPiece');
+    playAgain.classList.remove('showPiece');
+  }if (matches == 5){
+    gameOverMessage.innerHTML = "You Win! Congratulations!";
+    gameOverMessage.classList.remove('showPiece');
+    playAgain.classList.remove('showPiece');
+  }
 }
 
 
@@ -123,7 +131,7 @@ function resetGame(){
   gameOverMessage.classList.add('showPiece');
   playAgain.classList.add('showPiece');
   lives = 10;
-  matches = [];
+  matches = 0;
   flip = [];
   sec = 0;
   score = 0;
