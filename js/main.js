@@ -19,7 +19,7 @@
       flip =[],
       matches = 0,
       score = 0,
-      lives = 2,
+      lives = 4,
       gameOverMessage = document.querySelector('.typeEffect h1'),
       playAgain = document.querySelector('#playAgain'),
       lifeList = document.querySelector('.livesCon');
@@ -119,7 +119,7 @@ function gameOver(){
     gameOverMessage.classList.remove('showPiece');
     playAgain.classList.remove('showPiece');
   }if (matches == 5){
-    gameOverMessage.innerHTML = "You Win! Congratulations!";
+    gameOverMessage.innerHTML = "You Win! Well Done Soldier!";
     gameOverMessage.classList.remove('showPiece');
     playAgain.classList.remove('showPiece');
   }
