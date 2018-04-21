@@ -1,15 +1,14 @@
-.container{
+#container{
 	margin: 0 auto;
-
+	width: 1024px;
+	display: block;
 }
-
-
 
 body{
 	max-height: 100%;
 	margin: 0;
 	padding: 0;
-	background: url(../images/game_bckgd_logo.png) no-repeat;
+	background: url(../images/game_bckgd_logo.png) no-repeat center;
 	font-family: 'Andale Mono', Arial, sans-serif;
 }
 
