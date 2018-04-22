@@ -19,7 +19,8 @@
       flip =[],
       matches = 0,
       score = 0,
-      lives = 4,
+      scoreArea = document.querySelector("#scoreCount"),
+      lives = 5,
       gameOverMessage = document.querySelector('.typeEffect h1'),
       playAgain = document.querySelector('#playAgain'),
       lifeList = document.querySelector('.livesCon');
@@ -54,6 +55,7 @@ content.appendChild(list);
 let cards = Array.from(document.querySelectorAll('.card'));
 
 lifeList.innerHTML += "x"+lives;
+scoreArea.innerHTML = score;
 
 
 //timer
@@ -78,7 +80,8 @@ function flipCard() {
   function match() {
 
     if (flip[0].querySelector('.back').src != flip[1].querySelector('.back').src) {
-      score -=5;//lose 5 pts for wrong guess
+      score -=5;
+      scoreArea.innerHTML = score;//lose 5 pts for wrong guess
       lives--
       lifeList.innerHTML = "x"+lives;
       // if(lives ==0){
@@ -91,7 +94,8 @@ function flipCard() {
       console.log(score);
 
     } if (flip[0].querySelector('.back').src == flip[1].querySelector('.back').src) {//empty array if match
-      score +=20;//gain 20 pts for match
+      score +=20;
+      scoreArea.innerHTML = score;//gain 20 pts for match
       matches++;
       flip = [];
       console.log(matches);
@@ -130,11 +134,13 @@ function resetGame(){
   cards.forEach(card => card.classList.remove('flipped'));
   gameOverMessage.classList.add('showPiece');
   playAgain.classList.add('showPiece');
-  lives = 10;
+  lives = 5;
   matches = 0;
   flip = [];
   sec = 0;
   score = 0;
+  scoreArea.innerHTML = score;
+  lifeList.innerHTML = "x"+lives;
 }
 
 playButton.addEventListener('click', beginGame);

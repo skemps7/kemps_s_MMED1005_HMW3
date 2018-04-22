@@ -67,7 +67,7 @@ body{
 
 #gameBar{
 	float: left;
-	width: 666px;
+	width: 700px;
 	height: 73px;
 	background-color: #707070;
 	border: 8px solid #555;
@@ -76,7 +76,7 @@ body{
 }
 
 #gameBar div{
-	margin-right: 100px;
+	margin-right: 90px;
 }
 
 #lives{
@@ -107,6 +107,11 @@ body{
 
 #score{
 	float: left;
+}
+
+#score p{
+	display: inline;
+	line-height: 73px;
 }
 
 /*GAME INFO*/
